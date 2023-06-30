@@ -15,6 +15,9 @@ body {
 	align-items: center;
 	height: 100vh;
 }
+
+ 
+ 
 </style>
 </head>
 <body>
@@ -34,6 +37,7 @@ body {
 							<th><i class="fas fa-user-check"></i> Solicitante</th>
 							<th><i class="fas fa-calendar-week"></i> Fecha de Solicitud</th>
 							<th><i class="fas fa-file"></i> Incidente</th>
+							<th>  Impacto</th>
 							<th><i class="fas fa-sticky-note"></i> Recomendación</th>
 						</tr>
 					</thead>
