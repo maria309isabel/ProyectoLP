@@ -96,7 +96,7 @@ public class MySqlInformeDAO implements InformeDAO {
 
 		try {
 			cn = MysqlDBConexion.getConexion();
-			String sql = "select * from Cliente where codigoCliente=?";
+			String sql = "select * from Informe where codigoInforme=?";
 			pstm = cn.prepareStatement(sql);
 			pstm.setInt(1, codigo);
 			rs = pstm.executeQuery();
@@ -137,7 +137,7 @@ public class MySqlInformeDAO implements InformeDAO {
 
 		try {
 			cn = MysqlDBConexion.getConexion();
-			String sql = "delete from Cliente where codigoCliente=?";
+			String sql = "delete from Informe where codigoInforme=?";
 			pstm = cn.prepareStatement(sql);
 			pstm.setInt(1, codigo);
 			estado = pstm.executeUpdate();
@@ -167,7 +167,7 @@ public class MySqlInformeDAO implements InformeDAO {
 
 		try {
 			cn = MysqlDBConexion.getConexion();
-			String sql = "";
+			String sql = "update informe set codSolicitante=?, fechaSolicitud=?, codIncidente=?, comentario=? where codigoInforme=?";
 			pstm = cn.prepareStatement(sql);
 			pstm.setInt(1, obj.getCodigoSolicitante());
 			pstm.setString(2, obj.getFechaSolicitud());

@@ -11,24 +11,24 @@
 </head>
 <style>
 body {
- 	justify-content: center;
+	justify-content: center;
 	align-items: center;
 	height: 100vh;
 }
-
- 
- 
 </style>
 </head>
 <body>
 	<div class="form-container fw-bold text-center">
-		<h2 class="fw-bold p-4 text-center">Consultar Informe Técnico</h2>	<div class="text-center">
-				<button type="button" class="btn btn-dark fw-bold"
-					onclick="window.location.href='menuPrincipal.jsp'">
-					<i class="fas fa-backspace"></i> Regresar
-				</button></div><br>
+		<h2 class="fw-bold p-4 text-center">Consultar Informe Técnico</h2>
+		<div class="text-center">
+			<button type="button" class="btn btn-dark fw-bold"
+				onclick="window.location.href='menuPrincipal.jsp'">
+				<i class="fas fa-backspace"></i> Regresar
+			</button>
+		</div>
+		<br>
 		<form action="ServletInforme?tipo=listar" id="frmlistar" method="post">
-		
+
 			<div class="form-group mx-sm-3 mb-2">
 				<table class="table table-striped table-dark bg-dark p-2">
 					<thead>
@@ -37,8 +37,10 @@ body {
 							<th><i class="fas fa-user-check"></i> Solicitante</th>
 							<th><i class="fas fa-calendar-week"></i> Fecha de Solicitud</th>
 							<th><i class="fas fa-file"></i> Incidente</th>
-							<th>  Impacto</th>
+							<th>Impacto</th>
 							<th><i class="fas fa-sticky-note"></i> Recomendación</th>
+							<th scope="col" colspan="2">Acciones</th>
+
 						</tr>
 					</thead>
 					<tbody>
@@ -53,17 +55,18 @@ body {
 							<th><%=informe.getFechaSolicitud()%></th>
 							<th><%=informe.getDescripcion()%></th>
 							<th><%=informe.getImpacto()%></th>
-							<th><%=informe.getRecomendaciones()%></td>
+							<th><%=informe.getRecomendaciones()%>
+							</td>
 							<th align="center" scope="col"><a
-						href="ServletCliente?tipo=buscar&cod=<%=informes.getCodigoInforme()%>">
-							<label class="text-white"> <i class="fas fa-pencil-alt"></i></label>
-					</a></th>
-					<th align="center" scope="col"><a
-						href="ServletCliente?tipo=eliminar&cod=<%=informes.getCodigoInforme()%>">
-							<label class="text-white"> <i class="fas fa-trash"></i>
-						</label>
-					</a></th>
-							
+								href="ServletInforme?tipo=buscar&codigo=<%=informe.getCodigoInforme()%>">
+									<label class="text-white"> <i class="fas fa-pencil-alt"></i></label>
+							</a></th>
+							<th align="center" scope="col"><a
+								href="ServletInforme?tipo=eliminar&codigo=<%=informe.getCodigoInforme()%>">
+									<label class="text-white"> <i class="fas fa-trash"></i>
+								</label>
+							</a></th>
+
 						</tr>
 						<%
 							}

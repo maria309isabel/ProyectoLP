@@ -79,10 +79,8 @@
 		<label class="fs-4">¿No tienes cuenta?</label>
 		<a class="registrar" href="registrarUsuario.jsp">
 			<label class="fs-5">Crear cuenta</label>
-		</a>
-		
+		</a>	
 	</div>
 	</form>
-	
 </body>
 </html>

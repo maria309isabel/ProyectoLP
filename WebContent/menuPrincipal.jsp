@@ -25,7 +25,7 @@
 				<li><a href="ServletInforme?tipo=listar"
 					class="navbar-brand btn btn-dark"><i class="fas fa-search"></i> Consultar Informe</a></li>
   <br>
-				<li ><a class="navbar-brand btn btn-dark" href="ServletUsuario?tipo=cerrarSesion">
+				<li ><a class="navbar-brand btn btn-dark" href="ServletUsuario?tipo=salir">
 					<i class="fas fa-sign-out"></i> Cerrar Sesión</a></li> 
 			</ul>
 		</nav>
