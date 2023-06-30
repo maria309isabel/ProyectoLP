@@ -48,12 +48,22 @@ body {
 							for (Informe informe : informes) {
 						%>
 						<tr>
-							<td><%=informe.getCodigoInforme()%></td>
-							<td><%=informe.getNombreSolicitante()%></td>
-							<td><%=informe.getFechaSolicitud()%></td>
-							<td><%=informe.getDescripcion()%></td>
-							<td><%=informe.getImpacto()%></td>
-							<td><%=informe.getRecomendaciones()%></td>
+							<th><%=informe.getCodigoInforme()%></th>
+							<th><%=informe.getNombreSolicitante()%></th>
+							<th><%=informe.getFechaSolicitud()%></th>
+							<th><%=informe.getDescripcion()%></th>
+							<th><%=informe.getImpacto()%></th>
+							<th><%=informe.getRecomendaciones()%></td>
+							<th align="center" scope="col"><a
+						href="ServletCliente?tipo=buscar&cod=<%=informes.getCodigoInforme()%>">
+							<label class="text-white"> <i class="fas fa-pencil-alt"></i></label>
+					</a></th>
+					<th align="center" scope="col"><a
+						href="ServletCliente?tipo=eliminar&cod=<%=informes.getCodigoInforme()%>">
+							<label class="text-white"> <i class="fas fa-trash"></i>
+						</label>
+					</a></th>
+							
 						</tr>
 						<%
 							}

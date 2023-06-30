@@ -47,7 +47,7 @@ public class ServletUsuario extends HttpServlet {
 		int registro = u.registrarUsuario(obj);
 		if (registro != -1) {
             request.setAttribute("mensaje", "Usted se a registrado correctamente");
-            request.getRequestDispatcher("registrar.jsp").forward(request, response);
+            request.getRequestDispatcher("registrarUsuario.jsp").forward(request, response);
         } else {
             response.sendRedirect("error.html");
         }
