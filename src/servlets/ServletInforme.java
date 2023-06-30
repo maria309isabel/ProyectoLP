@@ -38,7 +38,47 @@ public class ServletInforme extends HttpServlet {
             listar(request, response);
         else if (tipo.equals("registrar"))
             registrar(request, response);
+        else if (tipo.equals("actualizar"))
+        	actualizar(request, response);
+        else if (tipo.equals("eliminar"))
+        	eliminar(request, response);
+        else if (tipo.equals("buscar"))
+        	buscar(request, response);
        
+	}
+
+
+	private void buscar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		String dato = request.getParameter("codigo");
+		int codigo = Integer.parseInt(dato);
+		Informe x = i.buscaInforme(codigo);
+		request.setAttribute("registro", x);
+		request.getRequestDispatcher("actualizarInforme.jsp").forward(request, response);
+	}
+
+	private void eliminar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		String dato = request.getParameter("cod");
+		int codigo = Integer.parseInt(dato);
+		i.eliminaInforme(codigo);
+		request.getRequestDispatcher("ServletInforme?tipo=listar").forward(request, response);
+	}
+
+	private void actualizar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		Informe obj = new Informe(0, null, null, null, null, null);
+	    String solicitante = request.getParameter("txt_solicitante");
+	    String fecha = request.getParameter("txt_fecha");
+	    String incidente = request.getParameter("txt_incidente");
+	    String recomendacion = request.getParameter("txt_recomendacion");
+	    obj.setCodigoSolicitante(Integer.parseInt(solicitante));
+	    obj.setFechaSolicitud(fecha);
+	    obj.setCodigoIncidente(Integer.parseInt(incidente));
+	    obj.setRecomendaciones(recomendacion);
+	    int estado = i.actualizarInforme(obj);
+	    if (estado != -1) {  
+	    	listar(request, response);
+	    } else {     
+	        response.sendRedirect("error.html");
+	    }
 	}
 
 
@@ -55,7 +95,7 @@ public class ServletInforme extends HttpServlet {
 	    int estado = i.registraInforme(obj);
 	    if (estado != -1) {  
 	        request.setAttribute("mensaje", "El informe se ha registrado correctamente.");
-	        request.getRequestDispatcher("registrarInforme.jsp").forward(request, response);
+	        request.getRequestDispatcher("registrar.jsp").forward(request, response);
 	    } else {     
 	        response.sendRedirect("error.html");
 	    }
@@ -65,6 +105,5 @@ public class ServletInforme extends HttpServlet {
 		List<Informe> info = new MySqlInformeDAO().listarInforme();
         request.setAttribute("informes", info);
         request.getRequestDispatcher("consultarIncidente.jsp").forward(request, response);
-    }
-	
+    }	
 }
