@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
+	<style>
 		body {
 			background-color: #f2f2f2; 
 			font-family: 'Arial', sans-serif; 
@@ -51,15 +51,17 @@
 </head>
 <body>
 	<form name="frmregistro" method="post" action="ServletUsuario?login=registrar">
-		<label>Usuario</label>
-		<input name="txtusuario" type="text">
-		<label>Contraseña</label>
-		<input name="txtcontra" type="password"><br>
-		<button type="submit">Registrar</button>
-		<button type="button" class="btn btn-primary fw-bold"
-				onclick="window.location.href='login.jsp'">
-				<i class="fas fa-backspace"></i> Regresar
-		</button>
-	</form>
+        <label>Usuario</label>
+        <input name="txtusuario" type="text">
+        <label>ContraseÃ±a</label>
+        <input name="txtcontra" type="password"><br>
+        <button type="submit">Registrar</button>
+        <button type="button" class="btn btn-primary fw-bold"
+                onclick="window.location.href='login.jsp'">
+                <i class="fas fa-backspace"></i> Regresar
+        </button>
+    </form>
+	<script src="https://kit.fontawesome.com/f16b543c6e.js"
+		crossorigin="anonymous"></script>
 </body>
 </html>
