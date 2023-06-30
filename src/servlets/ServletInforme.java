@@ -49,7 +49,7 @@ public class ServletInforme extends HttpServlet {
 
 
 	private void buscar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		String dato = request.getParameter("cod");
+		String dato = request.getParameter("codigo");
 		int codigo = Integer.parseInt(dato);
 		Informe x = i.buscaInforme(codigo);
 		request.setAttribute("registro", x);
